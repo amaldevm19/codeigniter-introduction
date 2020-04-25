@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeignitor-4</title>
+</head>
+<body>
+    <style>
+        h1,h3,h4,h5{
+            background-color: rgb(252, 81, 18);
+            color:white;
+            padding: 10px;
+            text-align: center;
+        }
+        li{
+            font-size: large;
+            padding: 8px;
+
+        }
+        pre{
+            color: rgb(252, 81, 18);
+            border: 2px;
+            border-style: solid;
+            border-color: rgb(252, 81, 18);
+            padding:10px;
+        }
+    </style>
+    <h1>CodeIgnitor basics</h1>
+    <h3>Pre-Requesties</h3>
+    <li>Download latest php from <a href="https://windows.php.net/download#php-7.4" target="_blank" rel="noopener noreferrer">PHP Download</a></li>
+    <li>Extract the downloaded php 7.4 to your c drive and rename as php</li>
+    <li>Rename php.ini-development to php.ini</li>
+    <li>Edit php.ini </li>
+    <li>As per Codeignitor document mbstring & intl extension need to be enabled with php</li>
+    <li>Find mbstring & intl extension text and enable it by removing ";"</li>
+    <li>Add php folder to your environment variable >> path</li>
+    <h3>Download codeigniter</h3>
+    <h5>Option 1 - Manual installation</h5>
+    <li>Download codeignitor from <a href="https://codeigniter.com/" target="_blank" rel="noopener noreferrer">https://codeigniter.com/</a></li>
+    <li>Extract downloaded codeignitor to your work folder</li>
+    <li>Open your console terminal from your workfolder</li>
+    <li>Open your work folder in VScode editor</li>
+    <pre>
+        code .
+    </pre>
+    
+    <h5>Option 2 - Using composer</h5>
+    <li>Download and install composer fron <a href="https://getcomposer.org/download/" target="_blank" rel="noopener noreferrer">https://getcomposer.org/download/</a></li>
+    <li>Open your workfolder in your terminal application</li>
+    <li>Now run</li>
+    <pre>
+        composer create-project codeigniter4/appstarter project-root
+    </pre>
+    <li>Change directory to project-root and run</li>
+    <pre>
+        php spark serve 
+    </pre>
+    <h5>Option 3 - Using Git</h5>
+    <li>Download and install git from <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer">https://git-scm.com/downloads</a></li>
+    <li>Open your workfolder in your terminal window</li>
+    <li>Open <a href="https://github.com/codeigniter4/CodeIgniter4" target="_blank" rel="noopener noreferrer">https://github.com/codeigniter4/CodeIgniter4</a> </li>
+    <pre>
+        git clone https://github.com/codeigniter4/CodeIgniter4.git
+    </pre>
+    <li>Change directory to CodeIgniter4 and run</li>
+    <pre>
+        php spark serve 
+    </pre>
+    <h5>Run the dev server Using SPARK - The Codeigniter dev server</h5>
+    <li>To run a spark server he need to modify the system\Commands\Server file </li>
+    <pre>
+        $php  = CLI::getOption('php') ?? PHP_BINARY;
+
+        to 
+
+        $php  = escapeshellarg(CLI::getOption('php') ?? PHP_BINARY);
+    </pre>
+    <pre>
+        php spark serve 
+    </pre>
+    <li>Now visit localhost:8080</li>
+    <li>To stop server press control + 'C'</li>
+    <h5>Run a dev server Using PHP built-in dev server</h5>
+    <pre>
+        php -S localhost:8000 ./public/index.php
+    </pre>
+    <li>Now visit localhost:8000</li>
+    <li>To stop server press control + 'C'</li>
+    <h1>For More Watch <a href="https://www.youtube.com/channel/UCLdqm70PDpd10UlsZMynmUg">TECHNO's Youtube channel</a> </h1>
+</body>
+</html>
